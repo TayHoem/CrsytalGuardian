@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemies
+  - Hero
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: background
+    uniqueID: 172525301
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Grass
+    uniqueID: 588457033
+    locked: 0
+  - name: Background
+    uniqueID: 1669197261
+    locked: 0
+  - name: Decoration
+    uniqueID: 1195312873
+    locked: 0
+  - name: Crystal
+    uniqueID: 4283924825
+    locked: 0
+  - name: Enemies
+    uniqueID: 4292340759
+    locked: 0
+  - name: Hero
+    uniqueID: 1596544877
+    locked: 0
+  - name: Bullet
+    uniqueID: 4061458077
+    locked: 0
+  - name: ExpBar
+    uniqueID: 1081814381
+    locked: 0
