@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 249649429}
   - component: {fileID: 249649428}
   - component: {fileID: 249649430}
+  - component: {fileID: 249649431}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -597,11 +598,108 @@ MonoBehaviour:
   avatar1: {fileID: 1565208461}
   avatar2: {fileID: 263360178}
   avatar3: {fileID: 1758458025}
+  levelUpSound: {fileID: 249649431}
   level: 1
   currentExp: 0
   requiredExp: 1000
   frontExpBar: {fileID: 2048729456}
   backExpBar: {fileID: 1494145806}
+--- !u!82 &249649431
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249649427}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fed0fbce6ce7d344d900e1a2dd8248f2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &263360178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1150,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7602820640921647685, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
+      propertyPath: towerBullet
+      value: 
+      objectReference: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
+    - target: {fileID: 7602820640921647685, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
+      propertyPath: towerBullet1
+      value: 
+      objectReference: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
+    - target: {fileID: 7602820640921647685, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
+      propertyPath: towerBulletStore
+      value: 
+      objectReference: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1712,6 +1822,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -177.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7602820640921647685, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
+      propertyPath: towerBullet1
+      value: 
+      objectReference: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
+    - target: {fileID: 7602820640921647685, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
+      propertyPath: towerBulletStore
+      value: 
+      objectReference: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
     - target: {fileID: 8028110844336095601, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -1993,7 +2111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -566.49, y: 87.610016}
+  m_AnchoredPosition: {x: -463.60004, y: 10.799988}
   m_SizeDelta: {x: 38.195984, y: 37.423004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879434305
@@ -3617,6 +3735,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -177.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7602820640921647685, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
+      propertyPath: towerBullet1
+      value: 
+      objectReference: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
+    - target: {fileID: 7602820640921647685, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
+      propertyPath: towerBulletStore
+      value: 
+      objectReference: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
     - target: {fileID: 8028110844336095601, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15
@@ -4479,7 +4605,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -456.5, y: 87}
+  m_AnchoredPosition: {x: -353.61005, y: 10.189972}
   m_SizeDelta: {x: 187.419, y: 16.739}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1494145806
@@ -4830,7 +4956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -456.88995, y: 86.81003}
+  m_AnchoredPosition: {x: -354, y: 10}
   m_SizeDelta: {x: 190.563, y: 22.178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1605876200
@@ -6674,7 +6800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -456.5, y: 87}
+  m_AnchoredPosition: {x: -353.61005, y: 10.189972}
   m_SizeDelta: {x: 187.419, y: 16.739}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048729456
@@ -6802,6 +6928,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7602820640921647685, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
+      propertyPath: towerBullet1
+      value: 
+      objectReference: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
+    - target: {fileID: 7602820640921647685, guid: c3220992f582d5e4eacbbb3c5831c444, type: 3}
+      propertyPath: towerBulletStore
+      value: 
+      objectReference: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

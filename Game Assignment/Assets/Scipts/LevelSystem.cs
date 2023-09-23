@@ -11,6 +11,7 @@ public class LevelSystem : MonoBehaviour
     public GameObject avatar1;
     public GameObject avatar2;
     public GameObject avatar3;
+    [SerializeField] private AudioSource levelUpSound;
 
     [Header("Level")]
     public int level;
@@ -105,6 +106,7 @@ public class LevelSystem : MonoBehaviour
     public void LevelUp()
     {
         level++;
+        levelUpSound.Play();
         frontExpBar.fillAmount = 0f;
         backExpBar.fillAmount = 0f;
         currentExp = Mathf.RoundToInt(currentExp - requiredExp);
