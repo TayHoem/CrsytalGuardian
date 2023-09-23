@@ -13,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -69,4 +69,7 @@ TagManager:
     locked: 0
   - name: ExpBar
     uniqueID: 1081814381
+    locked: 0
+  - name: Tower
+    uniqueID: 4165033959
     locked: 0

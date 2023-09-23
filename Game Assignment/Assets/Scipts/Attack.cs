@@ -6,6 +6,7 @@ public class Attack : MonoBehaviour
 {
     public Transform firePoint;     //place that the bullet come out
     public GameObject bulletPrefab; // the bullet prefab
+    public AudioSource razerShoot;
     public float bulletForce = 20f;
     public int attackspeed;
 
@@ -31,5 +32,6 @@ public class Attack : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce * attackspeed, ForceMode2D.Impulse);
         //play bullet fly out from gun
+        razerShoot.Play();
     }
 }
