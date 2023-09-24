@@ -29,7 +29,7 @@ public class EnemyMove : MonoBehaviour
 
             if (movePointCount == EnemyManager.main.point.Length)
             {
-                ZombieSpawner.onEnemyKilledOrDestroy.Invoke();
+                EnemySpawner.onEnemyKilledOrDestroy.Invoke();
                 Destroy(gameObject);
                 return;
             }

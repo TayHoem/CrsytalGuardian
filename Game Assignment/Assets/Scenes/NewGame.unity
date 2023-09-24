@@ -3136,7 +3136,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1695265236}
   - {fileID: 811814601}
   - {fileID: 2065274852}
   - {fileID: 1530686218}
@@ -4670,7 +4669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530686217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.65, y: 15.26, z: 0.39346388}
+  m_LocalPosition: {x: 2.65, y: 16.02, z: 0.39346388}
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5062,37 +5061,6 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
---- !u!1 &1695265235
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1695265236}
-  m_Layer: 0
-  m_Name: Waypoint (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1695265236
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695265235}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.89, y: 5.48, z: 0.39346388}
-  m_LocalScale: {x: 0, y: 0, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1013837720}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1722185748
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,6 +5095,12 @@ MonoBehaviour:
   point:
   - {fileID: 843075497}
   - {fileID: 627417395}
+  pointUpRight:
+  - {fileID: 811814601}
+  - {fileID: 2065274852}
+  - {fileID: 1530686218}
+  - {fileID: 1319876124}
+  pointDownRight: []
 --- !u!4 &1722185750
 Transform:
   m_ObjectHideFlags: 0
@@ -5156,6 +5130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemys:
   - {fileID: 178409504504440683, guid: ed1a2d7bc3c6c4d41a773f5c0fa2ff77, type: 3}
+  - {fileID: 4648619292571870550, guid: 184e9bec40a483f44a33f6e0abc8e0ef, type: 3}
   baseEnemies: 12
   enemiesPersecond: 0.5
   timeBetweenWaves: 5
@@ -5393,7 +5368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 902190509}
   bulletPrefab: {fileID: 9206818941301577172, guid: c7bba7d6d21003a46ac0c575b2c7c8a3, type: 3}
-  razerShoot: {fileID: 0}
+  razerShoot: {fileID: 1758458031}
   bulletForce: 20
   attackspeed: 1
 --- !u!114 &1758458027
@@ -6865,7 +6840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065274851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.360823, y: 15.305053, z: 0.39346388}
+  m_LocalPosition: {x: 21.360823, y: 15.65, z: 0.39346388}
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

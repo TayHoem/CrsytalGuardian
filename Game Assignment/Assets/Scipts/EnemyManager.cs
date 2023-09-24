@@ -10,7 +10,8 @@ public class EnemyManager : MonoBehaviour
 
     public Transform startingPoint;
     public Transform[] point;
-
+    public Transform[] pointUpRight;
+    public Transform[] pointDownRight;
 
     private void Awake()
     {

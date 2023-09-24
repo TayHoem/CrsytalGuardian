@@ -10,6 +10,7 @@ public class DefenseTower : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject towerBulletStore;
     [SerializeField] private Transform towerFirePoint;
+    [SerializeField] private AudioSource towerShootSound;
     
 
     [Header("Tower Attribute")]
@@ -57,6 +58,7 @@ public class DefenseTower : MonoBehaviour
     {
         GameObject bullet = Instantiate(towerBulletStore, towerFirePoint.position, towerFirePoint.rotation);
         towerBullet bullet1 = bullet.GetComponent<towerBullet>();
+        towerShootSound.Play();
         bullet1.setTarget(targetE);
     }
 

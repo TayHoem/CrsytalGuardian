@@ -34,7 +34,7 @@ public class towerBullet : MonoBehaviour
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 1f);
         Destroy(this.gameObject);
-        explosion.Play(0);
+        explosion.Play();
         /// enemies to take damage
         if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyCompenent))
         {
