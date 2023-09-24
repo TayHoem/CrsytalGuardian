@@ -7,7 +7,7 @@ public class towerBullet : MonoBehaviour
     [Header("Tower Bullet References")]
     [SerializeField] private Rigidbody2D rbBullet;
     [SerializeField] private GameObject hitEffect;
-    [SerializeField] private AudioSource explosion;
+
 
     [Header("Tower Bullet Attributes")]
     [SerializeField] private float bulletSpeed = 10f;
@@ -34,7 +34,6 @@ public class towerBullet : MonoBehaviour
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 1f);
         Destroy(this.gameObject);
-        explosion.Play();
         /// enemies to take damage
         if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyCompenent))
         {

@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Enemy Number")]
     [SerializeField] private GameObject[] enemys;
-    [SerializeField] private int baseEnemies = 8;
+    [SerializeField] private int baseEnemies = 5;
     [SerializeField] private float enemiesPersecond = 0.5f;
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float difficultyFactor = 0.75f;
@@ -61,8 +61,16 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject enemyToSpawn = enemys[0];
         GameObject enemyToSpawnRightUp = enemys[1];
+        GameObject enemyToSpawnRightDown = enemys[2];
+        GameObject enemyToSpawnLeftUp = enemys[3];
+        GameObject enemyToSpawnLeftDown = enemys[4];
+        GameObject enemyToSpawnLeftStraight = enemys[5];
         Instantiate(enemyToSpawn, EnemyManager.main.startingPoint.position, Quaternion.identity);
         Instantiate(enemyToSpawnRightUp, EnemyManager.main.startingPoint.position, Quaternion.identity);
+        Instantiate(enemyToSpawnRightDown, EnemyManager.main.startingPoint.position, Quaternion.identity);
+        Instantiate(enemyToSpawnLeftUp, EnemyManager.main.leftStartingPoint.position, Quaternion.identity);
+        Instantiate(enemyToSpawnLeftDown, EnemyManager.main.leftStartingPoint.position, Quaternion.identity);
+        Instantiate(enemyToSpawnLeftStraight, EnemyManager.main.leftStartingPoint.position, Quaternion.identity);
     }
 
     private IEnumerator StartWave()
