@@ -8,15 +8,18 @@ public class DefenseTower : MonoBehaviour
     [Header("Tower References")]
     [SerializeField] private Transform towerRotationPoint; //point to rotat the tower
     [SerializeField] private LayerMask enemyMask;
-    //[SerializeField] private GameObject towerBullet;
-    //[SerializeField] private Transform towerFirePoint;
+    [SerializeField] private GameObject towerBulletStore;
+    [SerializeField] private Transform towerFirePoint;
+    [SerializeField] private AudioSource towerShootSound;
     
 
     [Header("Tower Attribute")]
     [SerializeField] private float targetRange = 5f; //distance to target the enemy
     [SerializeField] private float rotatingSpeed = 5f;
+    [SerializeField] private float bps = 1f; //bullets in a second
 
     private Transform targetE;
+    private float timeFire;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +42,26 @@ public class DefenseTower : MonoBehaviour
         {
             targetE = null;
         }
+        else
+        {
+            timeFire += Time.deltaTime;
+
+            if(timeFire >= 1f/bps)
+            {
+                Shoot();
+                timeFire = 0f;
+            }
+        }
     }
+
+    private void Shoot()
+    {
+        GameObject bullet = Instantiate(towerBulletStore, towerFirePoint.position, towerFirePoint.rotation);
+        towerBullet bullet1 = bullet.GetComponent<towerBullet>();
+        towerShootSound.Play();
+        bullet1.setTarget(targetE);
+    }
+
 
     private bool CheckTargetInRange()
     {
@@ -61,7 +83,6 @@ public class DefenseTower : MonoBehaviour
         float angle = Mathf.Atan2(targetE.position.y - transform.position.y, targetE.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;
 
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
-        //towerRotationPoint.rotation = targetRotation;
         towerRotationPoint.rotation = Quaternion.RotateTowards(towerRotationPoint.rotation, targetRotation, rotatingSpeed * Time.deltaTime);
     }
 
