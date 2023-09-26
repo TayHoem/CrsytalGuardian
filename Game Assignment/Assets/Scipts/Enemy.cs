@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float health, maxHealth = 3f;
 
     float expAmount = 250;
+    float damage = 10f;
     LevelSystem levelSystem;
     // Start is called before the first frame update
     void Start()
@@ -37,5 +38,13 @@ public class Enemy : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<CrystalHealthBar>())
+        {
+            collision.gameObject.GetComponent<CrystalHealthBar>().CrystalTakeDamage(damage);
+            Destroy(this.gameObject);
+        }
+    }
 
 }

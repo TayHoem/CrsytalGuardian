@@ -14,9 +14,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float difficultyFactor = 0.75f;
 
+    //CrystalHealthBar hp;
+    //float damage = 10f;
+
     private int currentWave = 1;
     private float timeSinceLastSpawn;
-    private int enemiesAlive;
+    public int enemiesAlive;
     private int enemyLeftSpawn;
     private bool isSpawning = false;
 
@@ -35,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        //if (!isSpawning) return;
+        if (!isSpawning) return;
         timeSinceLastSpawn += Time.deltaTime;
 
         if (timeSinceLastSpawn >= (1f / enemiesPersecond) && enemyLeftSpawn > 0)
@@ -44,6 +47,10 @@ public class EnemySpawner : MonoBehaviour
             enemyLeftSpawn--;
             enemiesAlive++;
             timeSinceLastSpawn = 0f;
+            if (enemyLeftSpawn == 0)
+            {
+                enemiesAlive = enemiesAlive * enemys.Length;
+            }
         }
 
         if(enemiesAlive == 0 && enemyLeftSpawn == 0)
@@ -52,7 +59,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void enemyDestroyedOrKilled()
+    public void enemyDestroyedOrKilled()
     {
         enemiesAlive--;
     }

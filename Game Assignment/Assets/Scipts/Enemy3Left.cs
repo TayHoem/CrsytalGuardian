@@ -11,6 +11,7 @@ public class Enemy3Left : MonoBehaviour
     [Header("FishRobotAttributes")]
     [SerializeField] private float moveSpeed = 3f;
 
+
     private Transform targetPoint;
     private int movePointCount = 0;
     void Start()

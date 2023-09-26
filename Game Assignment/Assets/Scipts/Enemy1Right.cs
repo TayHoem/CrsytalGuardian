@@ -10,6 +10,10 @@ public class Enemy1Right : MonoBehaviour
     [Header("EnemyAttributes")]
     [SerializeField] private float moveSpeed = 2f;
 
+    CrystalHealthBar hp;
+    float damage = 10f;
+
+
     private Transform targetPoint;
     private int movePointCount= 0;
 

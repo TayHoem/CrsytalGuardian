@@ -6,6 +6,7 @@ public class Enemy1Left : MonoBehaviour
 {
     [Header("EnemyPhysicsElement")]
     [SerializeField] private Rigidbody2D rb;
+    CrystalHealthBar healthBar;
 
     [Header("EnemyAttributes")]
     [SerializeField] private float moveSpeed = 2f;
