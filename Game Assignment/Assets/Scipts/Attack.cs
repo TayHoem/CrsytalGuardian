@@ -6,14 +6,13 @@ public class Attack : MonoBehaviour
 {
     public Transform firePoint;     //place that the bullet come out
     public GameObject bulletPrefab; // the bullet prefab
-    public AudioSource razerShoot;
     public float bulletForce = 20f;
     public int attackspeed;
+    MenuSoundManager audioManager;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<MenuSoundManager>();
     }
 
     // Update is called once per frame
@@ -32,6 +31,6 @@ public class Attack : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce * attackspeed, ForceMode2D.Impulse);
         //play bullet fly out from gun
-        razerShoot.Play();
+        audioManager.PlaySFX(audioManager.shoot);
     }
 }
