@@ -769,6 +769,7 @@ MonoBehaviour:
   avatar1: {fileID: 1565208461}
   avatar2: {fileID: 263360178}
   avatar3: {fileID: 1758458025}
+  levelUpSound: {fileID: 0}
   level: 1
   currentExp: 0
   requiredExp: 1000
@@ -808,6 +809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1816168646}
   bulletPrefab: {fileID: 2261995756635264344, guid: f35f0b5a4472dd041b5adaf26aaeb936, type: 3}
+  razerShoot: {fileID: 0}
   bulletForce: 20
   attackspeed: 1
 --- !u!114 &263360180
@@ -4226,7 +4228,7 @@ TilemapRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 19.533333, y: 16.1, z: 0}
+  m_ChunkCullingBounds: {x: 19.5, y: 16.1, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -5876,6 +5878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1378874856}
   bulletPrefab: {fileID: 670214093798376140, guid: 9de431445cdd4e8438a32678a1ce23ba, type: 3}
+  razerShoot: {fileID: 0}
   bulletForce: 20
   attackspeed: 1
 --- !u!1 &1605876198
@@ -6348,6 +6351,12 @@ MonoBehaviour:
   point:
   - {fileID: 843075497}
   - {fileID: 627417395}
+  pointUpRight: []
+  pointDownRight: []
+  leftStartingPoint: {fileID: 0}
+  pointStraightLeft: []
+  pointUpLeft: []
+  pointDownLeft: []
 --- !u!4 &1722185750
 Transform:
   m_ObjectHideFlags: 0
@@ -6613,6 +6622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 902190509}
   bulletPrefab: {fileID: 9206818941301577172, guid: c7bba7d6d21003a46ac0c575b2c7c8a3, type: 3}
+  razerShoot: {fileID: 0}
   bulletForce: 20
   attackspeed: 1
 --- !u!114 &1758458027
