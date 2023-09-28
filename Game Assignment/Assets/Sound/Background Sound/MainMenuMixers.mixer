@@ -34,7 +34,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NewAudioMixer
+  m_Name: MainMenuMixers
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -67,7 +67,6 @@ AudioMixerGroupController:
   m_GroupID: 4206ecaaef0dbba4ea01ed7086bfcf51
   m_Children:
   - {fileID: 5260872113596268771}
-  - {fileID: 685968381084236160}
   m_Volume: b94a9d881e02f7444a2e75e1b8db7f7d
   m_Pitch: b4b7b3ccd390792419e76f0a28332d8b
   m_Send: 00000000000000000000000000000000
@@ -101,7 +100,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 480f6aadc1d7764498a13db351383421
   m_FloatValues:
-    9ed81fe62c548b946bd97e46dfb8e591: -0.2
+    9ed81fe62c548b946bd97e46dfb8e591: 0
   m_TransitionOverrides: {}
 --- !u!243 &685968381084236160
 AudioMixerGroupController:
@@ -131,7 +130,8 @@ AudioMixerGroupController:
   m_Name: VolumeMusic
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: b8f9f82ce40141e44b2a85f20e3d412b
-  m_Children: []
+  m_Children:
+  - {fileID: 685968381084236160}
   m_Volume: 98103c90ed3356447b7a96ee2578190f
   m_Pitch: eda57f37c7254ee47992c82d37485b11
   m_Send: 00000000000000000000000000000000

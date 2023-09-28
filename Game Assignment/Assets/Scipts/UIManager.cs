@@ -19,9 +19,9 @@ public class UIManager : MonoBehaviour
     public void Update()
     {
         mixer.SetFloat("VolumeMusic", volumeMusicValues);
-        PlayerPrefs.SetFloat("VolumeMusic", volumeMusicValues*100);
+        PlayerPrefs.SetFloat("VolumeMusic", volumeMusicValues * 100);
         mixer.SetFloat("VolumeSFX", volumeSFXValues);
-        PlayerPrefs.SetFloat("VolumeSFX", volumeSFXValues*100);
+        PlayerPrefs.SetFloat("VolumeSFX", volumeSFXValues * 100);
     }
     public void ToggleMusic()
     {

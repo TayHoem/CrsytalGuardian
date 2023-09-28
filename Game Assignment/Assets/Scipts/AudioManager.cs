@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void Start()
     {
         PlayMusic("Theme");
@@ -32,7 +33,7 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = Array.Find(musicSounds, x => x.name == name);
 
-        if(s == null)
+        if (s == null)
         {
             Debug.Log("Sound Not Found");
         }
@@ -69,7 +70,7 @@ public class AudioManager : MonoBehaviour
         float volumePercentage = Mathf.Clamp(volume, 0.0f, 100.0f);
 
         // Convert the volumePercentage to the 0-1 range
-        volume = volumePercentage/100;
+        volume = volumePercentage / 100;
         musicSource.volume = volume;
         return musicSource.volume;
     }
@@ -80,7 +81,7 @@ public class AudioManager : MonoBehaviour
         float volumePercentage = Mathf.Clamp(volume, 0.0f, 100.0f);
 
         // Convert the volumePercentage to the 0-1 range
-        volume = volumePercentage/100;
+        volume = volumePercentage / 100;
         sfxSource.volume = volume;
         return sfxSource.volume;
     }
