@@ -10,17 +10,14 @@ public class EnemySpawner : MonoBehaviour
     [Header("Enemy Number")]
     [SerializeField] private GameObject[] enemys;
     [SerializeField] private int baseEnemies = 5;
-    [SerializeField] private float enemiesPersecond = 0.5f;
-    [SerializeField] private float timeBetweenWaves = 5f;
+    [SerializeField] private float enemiesPersecond = 1f;
+    [SerializeField] private float timeBetweenWaves = 8f;
     [SerializeField] private float difficultyFactor = 0.75f;
-
-    //CrystalHealthBar hp;
-    //float damage = 10f;
 
     private int currentWave = 1;
     private float timeSinceLastSpawn;
     public int enemiesAlive;
-    private int enemyLeftSpawn;
+    public int enemyLeftSpawn;
     private bool isSpawning = false;
 
     [Header("Enemy Event")]
@@ -43,49 +40,89 @@ public class EnemySpawner : MonoBehaviour
 
         if (timeSinceLastSpawn >= (1f / enemiesPersecond) && enemyLeftSpawn > 0)
         {
-            SpawnEnemy();
-            enemyLeftSpawn--;
-            enemiesAlive++;
-            timeSinceLastSpawn = 0f;
-            if (enemyLeftSpawn == 0)
+                SpawnEnemy();
+                enemyLeftSpawn--;
+                timeSinceLastSpawn = 0f;
+        }
+        
+            if (enemiesAlive == 0 && enemyLeftSpawn == 0)
             {
-                enemiesAlive = enemiesAlive * enemys.Length;
+                EndEnemyWave();
             }
-        }
-
-        if(enemiesAlive == 0 && enemyLeftSpawn == 0)
-        {
-            EndEnemyWave();
-        }
+        
     }
 
     public void enemyDestroyedOrKilled()
     {
-        enemiesAlive--;
+        if (enemiesAlive != 0)
+        {
+            enemiesAlive--;
+        }
     }
 
     private void SpawnEnemy()
     {
-        GameObject enemyToSpawn = enemys[0];
-        GameObject enemyToSpawnRightUp = enemys[1];
-        GameObject enemyToSpawnRightDown = enemys[2];
-        GameObject enemyToSpawnLeftUp = enemys[3];
-        GameObject enemyToSpawnLeftDown = enemys[4];
-        GameObject enemyToSpawnLeftStraight = enemys[5];
-        Instantiate(enemyToSpawn, EnemyManager.main.startingPoint.position, Quaternion.identity);
-        Instantiate(enemyToSpawnRightUp, EnemyManager.main.startingPoint.position, Quaternion.identity);
-        Instantiate(enemyToSpawnRightDown, EnemyManager.main.startingPoint.position, Quaternion.identity);
-        Instantiate(enemyToSpawnLeftUp, EnemyManager.main.leftStartingPoint.position, Quaternion.identity);
-        Instantiate(enemyToSpawnLeftDown, EnemyManager.main.leftStartingPoint.position, Quaternion.identity);
-        Instantiate(enemyToSpawnLeftStraight, EnemyManager.main.leftStartingPoint.position, Quaternion.identity);
+        if(TimerCounter.timeLimit > 180 && TimerCounter.timeLimit <= 300) {
+            GameObject enemyToSpawn = enemys[0];
+            GameObject enemyToSpawnRightUp = enemys[1];
+            Instantiate(enemyToSpawn, EnemyManager.main.startingPoint[0].position, Quaternion.identity);
+            Instantiate(enemyToSpawnRightUp, EnemyManager.main.startingPoint[1].position, Quaternion.identity);
+        }else if(TimerCounter.timeLimit <= 180 && TimerCounter.timeLimit > 60)
+        {
+            GameObject enemyToSpawn = enemys[0];
+            GameObject enemyToSpawnRightUp = enemys[1];
+            GameObject enemyToSpawnRightDown = enemys[2];
+            GameObject enemyToSpawnLeftUp = enemys[3];
+            Instantiate(enemyToSpawn, EnemyManager.main.startingPoint[0].position, Quaternion.identity);
+            Instantiate(enemyToSpawnRightUp, EnemyManager.main.startingPoint[1].position, Quaternion.identity);
+            Instantiate(enemyToSpawnRightDown, EnemyManager.main.startingPoint[2].position, Quaternion.identity);
+            Instantiate(enemyToSpawnLeftUp, EnemyManager.main.startingPoint[3].position, Quaternion.identity);
+        }
+        else if(TimerCounter.timeLimit >= 0 && TimerCounter.timeLimit <= 60)
+        {
+            GameObject enemyToSpawn = enemys[0];
+            GameObject enemyToSpawnRightUp = enemys[1];
+            GameObject enemyToSpawnRightDown = enemys[2];
+            GameObject enemyToSpawnLeftUp = enemys[3];
+            GameObject enemyToSpawnLeftDown = enemys[4];
+            GameObject enemyToSpawnLeftStraight = enemys[5];
+            Instantiate(enemyToSpawn, EnemyManager.main.startingPoint[0].position, Quaternion.identity);
+            Instantiate(enemyToSpawnRightUp, EnemyManager.main.startingPoint[1].position, Quaternion.identity);
+            Instantiate(enemyToSpawnRightDown, EnemyManager.main.startingPoint[2].position, Quaternion.identity);
+            Instantiate(enemyToSpawnLeftUp, EnemyManager.main.startingPoint[3].position, Quaternion.identity);
+            Instantiate(enemyToSpawnLeftDown, EnemyManager.main.startingPoint[4].position, Quaternion.identity);
+            Instantiate(enemyToSpawnLeftStraight, EnemyManager.main.startingPoint[5].position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("Game End");
+        }
+       
     }
 
     private IEnumerator StartWave()
     {
         yield return new WaitForSeconds(timeBetweenWaves);
-
         isSpawning = true;
         enemyLeftSpawn = EnemiesWave();
+        if (TimerCounter.timeLimit > 180 && TimerCounter.timeLimit <= 300)
+        {
+            enemiesAlive = enemyLeftSpawn * 2;
+        }
+        else if (TimerCounter.timeLimit <= 180 && TimerCounter.timeLimit > 60)
+        {
+            enemiesAlive = enemyLeftSpawn * 4;
+        }
+        else
+        {
+            enemiesAlive = enemyLeftSpawn * 6;
+        }
+    }
+
+    private int EnemiesWave()
+    { 
+            return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultyFactor));
+
     }
 
     private void EndEnemyWave()
@@ -94,10 +131,5 @@ public class EnemySpawner : MonoBehaviour
         timeSinceLastSpawn = 0f;
         currentWave++;
         StartCoroutine(StartWave());
-    }
-
-    private int EnemiesWave()
-    {
-        return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultyFactor));
     }
 }

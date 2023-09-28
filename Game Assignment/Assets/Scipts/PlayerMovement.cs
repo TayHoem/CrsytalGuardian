@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; //control movement speed
+    public static float moveSpeed = 5f; //control movement speed
 
     public Rigidbody2D rb; // we need rigidbody to move it
 
     public Camera cam;
 
     Vector2 mousePos;
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

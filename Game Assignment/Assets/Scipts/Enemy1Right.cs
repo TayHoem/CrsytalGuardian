@@ -10,10 +10,6 @@ public class Enemy1Right : MonoBehaviour
     [Header("EnemyAttributes")]
     [SerializeField] private float moveSpeed = 2f;
 
-    CrystalHealthBar hp;
-    float damage = 10f;
-
-
     private Transform targetPoint;
     private int movePointCount= 0;
 
@@ -31,13 +27,7 @@ public class Enemy1Right : MonoBehaviour
         {
             movePointCount++;
 
-            if (movePointCount == EnemyManager.main.point.Length)
-            {
-                EnemySpawner.onEnemyKilledOrDestroy.Invoke();
-                Destroy(gameObject);
-                return;
-            }
-            else
+            if (movePointCount != EnemyManager.main.point.Length)
             {
                 targetPoint = EnemyManager.main.point[movePointCount];
             }

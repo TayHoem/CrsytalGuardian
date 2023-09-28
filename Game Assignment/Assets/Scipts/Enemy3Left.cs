@@ -27,13 +27,7 @@ public class Enemy3Left : MonoBehaviour
         {
             movePointCount++;
 
-            if (movePointCount == EnemyManager.main.pointUpLeft.Length)
-            {
-                EnemySpawner.onEnemyKilledOrDestroy.Invoke();
-                Destroy(gameObject);
-                return;
-            }
-            else
+            if (movePointCount != EnemyManager.main.pointUpLeft.Length)
             {
                 targetPoint = EnemyManager.main.pointUpLeft[movePointCount];
             }

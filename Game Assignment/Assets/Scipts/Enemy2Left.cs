@@ -25,17 +25,10 @@ public class Enemy2Left : MonoBehaviour
         {
             movePointCount++;
 
-            if (movePointCount == EnemyManager.main.pointDownLeft.Length)
-            {
-                EnemySpawner.onEnemyKilledOrDestroy.Invoke();
-                Destroy(gameObject);
-                return;
-            }
-            else
+            if (movePointCount != EnemyManager.main.pointDownLeft.Length)
             {
                 targetPoint = EnemyManager.main.pointDownLeft[movePointCount];
             }
-
 
         }
     }

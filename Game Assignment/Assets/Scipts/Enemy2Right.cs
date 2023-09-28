@@ -25,13 +25,7 @@ public class Enemy2Right : MonoBehaviour
         {
             movePointCount++;
 
-            if (movePointCount == EnemyManager.main.pointUpRight.Length)
-            {
-                EnemySpawner.onEnemyKilledOrDestroy.Invoke();
-                Destroy(gameObject);
-                return;
-            }
-            else
+            if (movePointCount != EnemyManager.main.pointUpRight.Length)
             {
                 targetPoint = EnemyManager.main.pointUpRight[movePointCount];
             }

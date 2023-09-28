@@ -57,9 +57,6 @@ TagManager:
   - name: Decoration
     uniqueID: 1195312873
     locked: 0
-  - name: Hero
-    uniqueID: 1596544877
-    locked: 0
   - name: Bullet
     uniqueID: 4061458077
     locked: 0
@@ -69,9 +66,15 @@ TagManager:
   - name: Crystal
     uniqueID: 4283924825
     locked: 0
+  - name: ExpBar
+    uniqueID: 1081814381
+    locked: 0
   - name: Enemies
     uniqueID: 4292340759
     locked: 0
-  - name: ExpBar
-    uniqueID: 1081814381
+  - name: Hero
+    uniqueID: 1596544877
+    locked: 0
+  - name: GameOver
+    uniqueID: 4244752195
     locked: 0

@@ -5,14 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class LevelSystem : MonoBehaviour
+public class PlayerLevel : MonoBehaviour
 {
     [Header("Hero Sprite")]
     public GameObject avatar1;
     public GameObject avatar2;
     public GameObject avatar3;
     [SerializeField] private AudioSource levelUpSound;
-
     [Header("Level")]
     public int level;
     public float currentExp;
@@ -24,8 +23,7 @@ public class LevelSystem : MonoBehaviour
     public Image frontExpBar;
     public Image backExpBar;
 
-    //public TextMeshProUGUI levelText;
-    //public TextMeshProUGUI expText;
+    public TextMeshProUGUI levelText;
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +35,7 @@ public class LevelSystem : MonoBehaviour
         frontExpBar.fillAmount = currentExp / requiredExp;
         backExpBar.fillAmount = currentExp / requiredExp;
 
-        //levelText.text = "Level" + level;
-        //expText.text = currentExp + "/" + requiredExp;
+        levelText.text = "LV " + level;
     }
 
     // Update is called once per frame
@@ -70,18 +67,25 @@ public class LevelSystem : MonoBehaviour
 
     private void HandleExperienceChange(float newExperince)
     {
-        this.newExp = newExperince;
-        currentExp += newExp;
-        lerpTimer = 0f;
-        delayTimer = 0f;
-        if (currentExp >= requiredExp)
+        if (level > 0 && level <= 2)
         {
-            LevelUp();
+            this.newExp = newExperince;
+            currentExp += newExp;
+            lerpTimer = 0f;
+            delayTimer = 0f;
+            if (currentExp >= requiredExp)
+            {
+                LevelUp();
+            }
         }
     }
 
     public void UpdateExpUI()
     {
+        if(level == 3)
+        {
+            currentExp = requiredExp;
+        }
 
         float expFraction = currentExp / requiredExp;
         float fillExp = frontExpBar.fillAmount;
@@ -100,7 +104,7 @@ public class LevelSystem : MonoBehaviour
             }
 
         }
-        //expText.text = currentExp + "/" + requiredExp;
+        
     }
 
     public void LevelUp()
@@ -111,7 +115,7 @@ public class LevelSystem : MonoBehaviour
         backExpBar.fillAmount = 0f;
         currentExp = Mathf.RoundToInt(currentExp - requiredExp);
         requiredExp += (float)1500;
-        //levelText.text = "Level " + level;
+        levelText.text = "LV " + level;
         switchAvatar(level);
     }
 
@@ -124,6 +128,9 @@ public class LevelSystem : MonoBehaviour
                     avatar1.gameObject.SetActive(false);
                     avatar2.gameObject.SetActive(true);
                     avatar3.gameObject.SetActive(false);
+                    Bullet.bullletDamageUp();
+                    PlayerMovement.moveSpeed += 2;
+                    avatar2.transform.position = avatar1.transform.position;
                 }
                 break;
             case 3:
@@ -131,6 +138,9 @@ public class LevelSystem : MonoBehaviour
                     avatar1.gameObject.SetActive(false);
                     avatar2.gameObject.SetActive(false);
                     avatar3.gameObject.SetActive(true);
+                    Bullet.bullletDamageUp();
+                    PlayerMovement.moveSpeed += 2;
+                    avatar3.transform.position = avatar2.transform.position;
                 }
                 break;
         }

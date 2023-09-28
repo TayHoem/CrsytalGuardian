@@ -5,7 +5,6 @@ using UnityEngine;
 public class ExperienceManager : MonoBehaviour
 {
     public static ExperienceManager Instance;
-
     public delegate void ExperienceChangeHandler(float amount);
     public event ExperienceChangeHandler OnExperienceChange;
 
@@ -26,17 +25,5 @@ public class ExperienceManager : MonoBehaviour
     public void AddExperince(float amount)
     {
         OnExperienceChange?.Invoke(amount);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

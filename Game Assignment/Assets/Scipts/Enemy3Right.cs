@@ -27,13 +27,7 @@ public class Enemy3Right : MonoBehaviour
         {
             movePointCount++;
 
-            if (movePointCount == EnemyManager.main.pointDownRight.Length)
-            {
-                EnemySpawner.onEnemyKilledOrDestroy.Invoke();
-                Destroy(gameObject);
-                return;
-            }
-            else
+            if (movePointCount != EnemyManager.main.pointDownRight.Length)
             {
                 targetPoint = EnemyManager.main.pointDownRight[movePointCount];
             }

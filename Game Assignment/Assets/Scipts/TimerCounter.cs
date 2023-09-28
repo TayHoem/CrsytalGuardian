@@ -6,7 +6,7 @@ using UnityEngine;
 public class TimerCounter : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timeText;
-    [SerializeField] private float timeLimit;
+     public static float timeLimit = 300;
 
     // Update is called once per frame
     void Update()
@@ -33,3 +33,5 @@ public class TimerCounter : MonoBehaviour
         
     }
 }
+
+

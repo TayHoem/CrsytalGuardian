@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -129933337
-  m_SortingLayer: 9
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1945165273, guid: 7b3606dd84c8e6947a3b8e2c9a4c3cd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -230,7 +230,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  towerBulletStore: {fileID: 0}
+  towerBulletStore: {fileID: 817574368771780246, guid: 77bb23ff1f076c44f9d83ce981d344ed, type: 3}
   towerFirePoint: {fileID: 4185601245246433983}
   towerShootSound: {fileID: 8403021371670329363}
   targetRange: 12

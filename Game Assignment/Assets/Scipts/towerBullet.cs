@@ -37,7 +37,7 @@ public class towerBullet : MonoBehaviour
         /// enemies to take damage
         if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyCompenent))
         {
-            enemyCompenent.TakeDamage(1);
+            enemyCompenent.TakeDamage(Bullet.bulletDamage);
         }
     }
 }

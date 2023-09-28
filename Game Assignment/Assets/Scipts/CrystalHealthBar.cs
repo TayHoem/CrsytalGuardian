@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CrystalHealthBar : MonoBehaviour
 {
@@ -11,12 +12,13 @@ public class CrystalHealthBar : MonoBehaviour
     private float lerpTimer;
     public Image crystalfrontHp;
     public Image crystalBackHp;
+    public TextMeshProUGUI hpText;
 
     // Start is called before the first frame update
     void Start()
     {
         crystalHp = crystalmaxHp;
-
+        hpText.text = crystalHp + "/" + crystalmaxHp;
         if(crystalHp <= 0)
         {
             Destroy(gameObject);
@@ -28,6 +30,11 @@ public class CrystalHealthBar : MonoBehaviour
     {
         crystalHp = Mathf.Clamp(crystalHp, 0, crystalmaxHp); //to makesure the Crystal Hp is from 0 to 100 only
         UpdateCrystalHPBar();
+        if(crystalHp <= 0)
+        {
+            hpText.color = Color.red;
+            Destroy(gameObject, 5f);
+        }
     }
 
     public void UpdateCrystalHPBar()
@@ -35,7 +42,8 @@ public class CrystalHealthBar : MonoBehaviour
         float fillFront = crystalfrontHp.fillAmount;
         float fillBack = crystalBackHp.fillAmount;
         float hpFraction = crystalHp / crystalmaxHp;
-        if(fillBack > hpFraction) 
+        hpText.text = crystalHp + "/" + crystalmaxHp;
+        if (fillBack > hpFraction) 
         {
             crystalfrontHp.fillAmount = hpFraction;
             crystalBackHp.color = Color.magenta;
